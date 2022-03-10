@@ -56,6 +56,10 @@ class Fighter(BaseComponent):
         if self.engine.player is self.parent:
             death_message = "lmfao pwnt"
             death_message_color = color.player_die
+        elif self.engine.golden_candle is self.parent
+            death_message = f"The flame of the {self.parent.name} gutters and dies!"
+            death_message_color = color.enemy_die
+       
         else:
             death_message = f"The {self.parent.name} is dead!"
             death_message_color = color.enemy_die
@@ -70,7 +74,9 @@ class Fighter(BaseComponent):
         self.engine.message_log.add_message(death_message, death_message_color)
         
     def burn(self, amount: int) -> None:
-        if self.parent.ai = CandleAI:
+        self.parent.blocks_movement = False
+        burning = isinstance(self.parent.ai, CandleAI)
+        if burning is True:
             self.hp -= 1
             
     def heal(self, amount: int) -> int:

@@ -39,9 +39,9 @@ enemy_chances: Dict[int, List[Tuple[Entity, int]]] = {
 
 boss_chances: Dict[int, List[Tuple[Entity, int]]] = {
     0: [(entity_factories.boss1, 100)],
-    1: [(entity_factories.boss2, 100)],
-    2: [(entity_factories.boss3, 100)],
-    3: [(entity_factories.boss4, 100)]
+    1: [(entity_factories.boss1, 100)],
+    2: [(entity_factories.boss1, 100)],
+    3: [(entity_factories.boss1, 100)]
 
 }
 def get_max_value_for_floor(

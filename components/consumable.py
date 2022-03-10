@@ -12,6 +12,7 @@ from components.base_component import BaseComponent
 from exceptions import Impossible
 from input_handlers import ActionOrHandler, AreaRangedAttackHandler, SingleRangedAttackHandler
 import components.fighter
+import entity
 
 if TYPE_CHECKING:
     from entity import Actor, Item
@@ -32,8 +33,7 @@ class Consumable(BaseComponent):
             inventory.items.remove(entity)
             
 class GoldenCandle(Consumable):
-    def __init__(self, number_of_turns: int, radius: int):
-        self.number_of_turns = number_of_turns
+    def __init__(self, radius: int):
         self.radius = radius
         
             
@@ -41,6 +41,6 @@ class GoldenCandle(Consumable):
         consumer = action.entity
         target = action.target_actor
 
-        entity.place(entity_factories.burning_candle)
+        entity.Entity.place(entity_factories.burning_candle)
         
         self.consume()
