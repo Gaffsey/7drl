@@ -38,8 +38,6 @@ boss1 = Actor(
     inventory=Inventory(capacity=0),
 )
 
-)
-
 
 golden_candle = Item(
     char="i",
