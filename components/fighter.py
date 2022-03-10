@@ -69,7 +69,10 @@ class Fighter(BaseComponent):
         
         self.engine.message_log.add_message(death_message, death_message_color)
         
-    
+    def burn(self, amount: int) -> None:
+        if self.parent.ai = CandleAI:
+            self.hp -= 1
+            
     def heal(self, amount: int) -> int:
         if self.hp == self.max_hp:
             return 0
@@ -87,15 +90,3 @@ class Fighter(BaseComponent):
         
     def take_damage(self, amount: int) -> None:
         self.hp -= amount
-        
-    def ally(self):
-        if isinstance(entity_factories, components.ai.HostileEnemy) is True:
-                self.parent.ai = FriendlyAI
-                self.parent.blocks_movement=False
-        else:
-            pass
-            
-class Boss(BaseComponent):
-    parent: Fighter
-    def __init__(self, trapped):
-        self.trapped = trapped

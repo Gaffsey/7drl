@@ -103,8 +103,6 @@ class Actor(Entity):
         self.fighter.parent = self
         self.inventory = inventory
         self.inventory.parent = self
- #       self.monster_fov = monster_fov
-  #      self.monster_fov.parent = monster_fov
         
     @property
     def is_alive(self) -> bool:

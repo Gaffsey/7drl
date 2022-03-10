@@ -60,24 +60,21 @@ class HostileEnemy(BaseAI):
         return WaitAction(self.entity).perform()
 class CandleAI(BaseAI):
     def __init__(
-        self, entity: Actor, turns_remaining: int
+        self, entity: Actor
 ):
         super().__init__(entity)
-        self.turns_remaining = turns_remaining
         
     def perform(self) -> None:
-        if self.turns_remaining > 0:
-
-            for tile in self.engine.game_map.render:
+        for tile in self.engine.game_map.render:
         
-                if tile.distance(*target_xy) <= self.radius:   
-                    append(self.game_map.lit)
-        else:
-            self.engine.message_log.add_message(
-            f"The {self.entity.name} flickers in the dark, illuminating the dungeon."
+            if tile.distance(*target_xy) <= self.radius:   
+                append(self.game_map.lit)
+        self.engine.message_log.add_message(
+        f"The {self.entity.name} flickers in the dark, illuminating the dungeon."
         )
-            self.turns_remaining -= 1
+        
 
+            
     
 class BossAI(BaseAI):
     def __init__(self, entity: Actor):
@@ -90,7 +87,6 @@ class BossAI(BaseAI):
         dx = target.x - self.entity.x
         dy = target.y - self.entity.y
         distance = max(abs(dx), abs(dy))
-        #list of spaces 3 tiles away (in a straight/diagonal line)
         if self.engine.turn  % 2 == 0:
                 
             if self.engine.game_map.visible[self.entity.x, self.entity.y]:
