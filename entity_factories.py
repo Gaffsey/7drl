@@ -30,7 +30,7 @@ orc = Actor(
 
 boss1 = Actor(
     char="B", 
-    color=(0, 127, 0), 
+    color=(255, 255, 255), 
     name="Boss",     
     ai_cls=BossAI,
     equipment=Equipment(),
@@ -38,34 +38,6 @@ boss1 = Actor(
     inventory=Inventory(capacity=0),
 )
 
-boss2 = Actor(
-    char="B", 
-    color=(255, 0, 127), 
-    name="Boss",     
-    ai_cls=BossAI,
-    equipment=Equipment(),
-    fighter=Fighter(hp=800, base_defense=600, base_power=700),
-    inventory=Inventory(capacity=0),
-)
-
-boss3 = Actor(
-    char="B", 
-    color=(255, 255, 51), 
-    name="Boss",     
-    ai_cls=BossAI,
-    equipment=Equipment(),
-    fighter=Fighter(hp=800, base_defense=600, base_power=700),
-    inventory=Inventory(capacity=0),
-)
-
-boss4 = Actor(
-    char="B", 
-    color=(51, 51, 255), 
-    name="Boss",     
-    ai_cls=BossAI,
-    equipment=Equipment(),
-    fighter=Fighter(hp=800, base_defense=600, base_power=700),
-    inventory=Inventory(capacity=0),
 )
 
 
