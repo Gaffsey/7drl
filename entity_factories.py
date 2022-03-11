@@ -3,7 +3,9 @@ from components import consumable, equippable
 from components.equipment import Equipment
 from components.fighter import Fighter
 from components.inventory import Inventory
-from entity import Actor, Item, Entity
+from entity import Actor, Item
+from game_map import GameMap
+
 player = Actor(
     char="@", 
     color=(255, 255, 255), 
@@ -12,7 +14,7 @@ player = Actor(
     equipment=Equipment(),
     fighter=Fighter(hp=100, base_defense=100, base_power=100),
     inventory=Inventory(capacity=26),
-    gamemap=GameMap
+    game_map=GameMap
     )
 
 orc = Actor(
@@ -23,7 +25,7 @@ orc = Actor(
     equipment=Equipment(),
     fighter=Fighter(hp=1, base_defense=0, base_power=0),
     inventory=Inventory(capacity=0),
-    gamemap=GameMap
+    game_map=GameMap
     )
 
 
@@ -36,7 +38,7 @@ boss1 = Actor(
     equipment=Equipment(),
     fighter=Fighter(hp=30, base_defense=50, base_power=200),
     inventory=Inventory(capacity=0),
-    gamemap=GameMap
+    game_map=GameMap
 )
 
 
@@ -57,7 +59,7 @@ burning_candle = Actor(
     equipment=Equipment(),
     fighter=Fighter(hp=5, base_defense=0, base_power=0),
     inventory=Inventory(capacity=0),
-    gamemap=GameMap
+    game_map=GameMap
 )
 
 dagger = Item(
