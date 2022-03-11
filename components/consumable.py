@@ -38,8 +38,8 @@ class GoldenCandle(Consumable):
             
     def activate(self, action: actions.ItemAction) -> None:
         consumer = action.entity
-        gamemap = self.engine.game_map.consumer #stolen from pickup actions
+        gamemap = self.engine.game_map #stolen from pickup actions
         entity_factories.burning_candle.spawn(self.gamemap, consumer.x, consumer.y) 
-        self.engine.message_log.add_message(f"You place the {entity.name} on the ground! The wick bursts into flame!")        
+        self.engine.message_log.add_message(f"You place the candle on the ground! The wick bursts into flame!")        
         self.consume()
         

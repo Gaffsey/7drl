@@ -58,21 +58,23 @@ class HostileEnemy(BaseAI):
             ).perform()
             
         return WaitAction(self.entity).perform()
+        
 class CandleAI(BaseAI):
     def __init__(
-        self, entity: Actor
+        self, entity: Actor, radius: int
 ):
         super().__init__(entity)
-        
+        radius = self.radius
     def perform(self) -> None:
-        for tile in self.engine.game_map.render:
-        
-            if tile.distance(*target_xy) <= self.radius:   
-                append(self.game_map.lit)
-        self.engine.message_log.add_message(
-        f"The {self.entity.name} flickers in the dark, illuminating the dungeon."
-        )
-        
+#        target_xy = action.target_xy
+#        for tile in self.engine.game_map.render:
+#        
+#            if tile.distance(*target_xy) <= self.radius:   
+#                append(self.game_map.lit)
+#        self.engine.message_log.add_message(
+#        f"The {self.entity.name} flickers in the dark, illuminating the dungeon."
+#        )
+        pass
 
             
     

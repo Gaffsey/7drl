@@ -2,7 +2,7 @@ from __future__ import annotations
 import color
 import exceptions
 import random
-from typing import Optional, TYPE_CHECKING
+from typing import Optional, Tuple, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from engine import Engine
@@ -65,7 +65,7 @@ class ItemAction(Action):
 class DropItem(ItemAction):
     def perform(self) -> None:
         if self.entity.equipment.item_is_equipped(self.item):
-            self.entity.equipment.toggle_equp(self.item)
+            self.entity.equipment.toggle_equip(self.item)
         self.entity.inventory.drop(self.item)
 
 class EquipAction(Action):
