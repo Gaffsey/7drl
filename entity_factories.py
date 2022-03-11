@@ -42,7 +42,7 @@ golden_candle = Item(
     char="i",
     color=(255, 255, 0),
     name="Golden Candle",
-    consumable=consumable.GoldenCandle(radius=5),
+    consumable=consumable.GoldenCandle(),
 )
 
 

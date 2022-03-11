@@ -61,10 +61,9 @@ class HostileEnemy(BaseAI):
         
 class CandleAI(BaseAI):
     def __init__(
-        self, entity: Actor, radius: int
+        self, entity: Actor
 ):
         super().__init__(entity)
-        radius = self.radius
     def perform(self) -> None:
 #        target_xy = action.target_xy
 #        for tile in self.engine.game_map.render:

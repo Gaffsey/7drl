@@ -33,9 +33,8 @@ class Consumable(BaseComponent):
             inventory.items.remove(entity)
             
 class GoldenCandle(Consumable):
-    def __init__(self, radius: int):
-        self.radius = radius
-            
+    def __init__(self):
+            pass
     def activate(self, action: actions.ItemAction) -> None:
         consumer = action.entity
         gamemap = self.engine.game_map #stolen from pickup actions
