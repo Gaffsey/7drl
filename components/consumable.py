@@ -35,11 +35,11 @@ class Consumable(BaseComponent):
 class GoldenCandle(Consumable):
     def __init__(self, radius: int):
         self.radius = radius
-        
             
     def activate(self, action: actions.ItemAction) -> None:
-        entity = self.parent
-        entity.place(self.parent.x, self.parent.y, entity_factories.burning_candle)
-        self.engine.message_log.add_message(f"You place the {entity.name}, which bursts into flame.")        
+        consumer = action.entity
+        gamemap = self.engine.game_map.consumer #stolen from pickup actions
+        entity_factories.burning_candle.spawn(self.gamemap, consumer.x, consumer.y) 
+        self.engine.message_log.add_message(f"You place the {entity.name} on the ground! The wick bursts into flame!")        
         self.consume()
         

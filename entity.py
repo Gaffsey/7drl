@@ -83,6 +83,7 @@ class Actor(Entity):
         equipment: Equipment,
         fighter: Fighter,
         inventory: Inventory,
+        game_map: GameMap
     ):
         super().__init__(
             x=x,
@@ -103,6 +104,8 @@ class Actor(Entity):
         self.fighter.parent = self
         self.inventory = inventory
         self.inventory.parent = self
+        self.game_map: Optional[GameMap] = game_map
+        self.game_map.parent = self
         
     @property
     def is_alive(self) -> bool:
