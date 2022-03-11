@@ -54,7 +54,7 @@ burning_candle = Actor(
     name="Boss",     
     ai_cls=CandleAI,
     equipment=Equipment(),
-    fighter=Fighter(hp=00, base_defense=50, base_power=200),
+    fighter=Fighter(hp=5, base_defense=0, base_power=0),
     inventory=Inventory(capacity=0),
 )
 

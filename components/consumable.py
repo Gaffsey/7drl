@@ -38,9 +38,11 @@ class GoldenCandle(Consumable):
         
             
     def activate(self, action: actions.ItemAction) -> None:
-        consumer = action.entity
+        entity = self.parent
         target = action.target_actor
 
-        entity.Entity.place(entity_factories.burning_candle)
-        
+
+        entity.place(self.parent.x, self.parent.y, entity_factories.burning_candle)
+        self.engine.message_log.add_message(f"You place the {entity.name}, which bursts into flame.")        
         self.consume()
+        

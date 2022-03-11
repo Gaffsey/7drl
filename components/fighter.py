@@ -56,7 +56,7 @@ class Fighter(BaseComponent):
         if self.engine.player is self.parent:
             death_message = "lmfao pwnt"
             death_message_color = color.player_die
-        elif self.engine.golden_candle is self.parent
+        elif self.engine.golden_candle is self.parent:
             death_message = f"The flame of the {self.parent.name} gutters and dies!"
             death_message_color = color.enemy_die
        
